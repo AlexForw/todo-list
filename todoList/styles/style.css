@@ -9,17 +9,16 @@ input {
 }
 body {
     font-family: "MuseoModerno", sans-serif;
-    background-image: linear-gradient(120deg, rgb(221, 84, 84), rgb(201, 147, 48));
+    background-image: linear-gradient(120deg, rgb(0, 0, 0), rgb(78, 74, 74));
     background-repeat: no-repeat;
     min-height: 100vh;
-    padding-top: 15vh;
     font-size: 2rem;
-    padding: 2rem;
+    padding: 8vh;
 }
 
 .header-title {
     font-size: 3rem;
-    color: rgb(241, 213, 177);
+    color: white;
 }
 .todo-type, .header-title {
     min-height: 15vh;
@@ -33,27 +32,30 @@ body {
     border: none;
     background-color: white;
     outline: none;
+    width: 100%;
 }
 
 .todo-btn {
     cursor: pointer;  
     transition: all 0.3s ease;
     background-color: #fff;
+    color: black;
 }
 .todo-btn:hover {
-    background-color: rgb(209, 107, 59);
+    background-color: rgb(78, 74, 74);
 }
 .todo-btn:active {
-    background-color: rgb(209, 107, 59);
+    background-color: white;
     box-shadow: inset 0.2em 0.2em 0.5em rgb(139, 108, 108);
 }
 
 .todo {
     margin-top: 6vh;
     display: flex;
-    background-color: rgb(245, 206, 154);
-    min-width: 70%;
+    background-color: white;
+    min-width: 100%;
     justify-content: space-between;
+
 }
 .todo p{
     flex: 1;
@@ -71,14 +73,19 @@ body {
     
     align-items: center;
 }
-@media all and (max-width:1200px){
+@media (max-width:1200px){
     .todo-text {
         margin: 0.2rem 1rem;
         font-size: 1rem;
         min-width: 70%;
         display: flex;
-        word-wrap: wrap;
+        word-wrap: break-word;
         align-items: center;
+    }
+
+    .header-title {
+        font-size: 2rem;
+        color: white;
     }
 }
 .delete-btn {
@@ -87,9 +94,11 @@ body {
     background-color: rgb(216, 23, 23);
     padding: 0.7rem;
     border: none;
+    cursor: pointer;
 }
 
 .check-btn {
+    cursor: pointer;
     font-size: 1.8rem;
     color: white;
     background-color: rgb(26, 141, 3);
@@ -100,4 +109,10 @@ body {
     text-decoration: line-through;
     background-color: rgb(173, 164, 164);
     opacity: .4;
+}
+.check-btn:active{
+    background-color: rgb(43, 36, 36);
+}
+.delete-btn:active{
+    background-color: rgb(43, 36, 36);
 }
