@@ -11,6 +11,11 @@ function hey(e) {
     
     e.preventDefault()
     
+    
+
+
+    if(input.value == '')return console.log('Enter input value')
+
     const todoBlock = document.createElement('div')
     todoBlock.classList.add('todo')
     
@@ -30,17 +35,22 @@ function hey(e) {
     todoBlock.appendChild(deleteBtn)
  
     
-
-    todoList.appendChild(todoBlock)
+    todoList.insertBefore(todoBlock, todoList.firstChild);
     input.value='' 
-
+    
+    
+    
     
     checkBtn.addEventListener('click', function(){
         todoBlock.classList.toggle('check')
+        if(todoBlock.classList.contains('check')){
+            todoList.appendChild(todoBlock)
+        }
     })
 
     deleteBtn.addEventListener('click',function(){
         todoList.removeChild(todoBlock)
     })
-}
 
+    
+}
