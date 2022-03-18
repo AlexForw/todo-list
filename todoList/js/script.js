@@ -21,18 +21,26 @@ function hey(e) {
 
     const checkBtn = document.createElement('button')
     checkBtn.classList.add('check-btn')
+    checkBtn.innerHTML = '<i class="fa-solid fa-check"></i>'
     todoBlock.appendChild(checkBtn)
-    console.log(checkBtn)
     
     const deleteBtn = document.createElement('button')
     deleteBtn.classList.add('delete-btn')
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
     todoBlock.appendChild(deleteBtn)
-    console.log(deleteBtn)
+ 
     
 
     todoList.appendChild(todoBlock)
+    input.value='' 
+
     
+    checkBtn.addEventListener('click', function(){
+        todoBlock.classList.toggle('check')
+    })
+
+    deleteBtn.addEventListener('click',function(){
+        todoList.removeChild(todoBlock)
+    })
 }
-/* console.log(todoBlock)
-todoBlock.textContent = input.value
-input.value='' */
+
